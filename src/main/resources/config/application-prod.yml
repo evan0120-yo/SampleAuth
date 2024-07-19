@@ -1,0 +1,13 @@
+server:
+  servlet:
+    context-path: /api
+  port: 8080
+
+spring:
+  datasource:
+    url: jdbc:postgresql://localhost:5432/zodiacSign?stringtype=unspecified
+    username: postgres
+    password: sky77619
+
+
+
