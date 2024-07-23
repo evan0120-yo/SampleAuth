@@ -3,6 +3,8 @@ server:
     context-path: ${server.servlet.context-path}
   port: ${server.port}
 spring:
+  profiles:
+    active: local
   datasource:
      driver-class-name: org.postgresql.Driver
      url: ${spring.datasource.url}

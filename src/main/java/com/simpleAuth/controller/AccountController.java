@@ -32,8 +32,4 @@ public class AccountController {
 		return ResponseEntity.ok().build();
 	}
 	
-	@GetMapping
-	public ResponseEntity<?> test() {
-		return ResponseEntity.ok("test ok!!");
-	}
 }
