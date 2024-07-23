@@ -21,6 +21,7 @@ pipeline {
         stage('Deploy'){
             steps{
                 echo "Code Deployed..."
+                bat 'docker-compose up'
                 // build job: 'TestJenkinsDeploy'
             }
         }
