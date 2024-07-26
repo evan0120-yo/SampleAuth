@@ -23,13 +23,6 @@ pipeline {
                 bat 'docker-compose down'
             }
         }
-
-
-                if (fileExists('./proj')) {
-            sh 'echo found'
-        }
-
-
         stage('Docker image rmi'){
             steps{
                 if(fileExists('./simpleauth')){
