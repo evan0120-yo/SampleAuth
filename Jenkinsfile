@@ -31,7 +31,7 @@ pipeline {
             }
         }
         stage('Deploy3'){
-            step{
+            steps{
                 echo "Code Deployed docker-compose up start..."
                 bat 'docker-compose up -d'
             }
