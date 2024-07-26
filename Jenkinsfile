@@ -20,9 +20,16 @@ pipeline {
         }
         stage('Deploy'){
             steps{
-                echo "Code Deployed..."
+                echo "Code Deployed docker-compose down start..."
                 bat 'docker-compose down'
-                // build job: 'TestJenkinsDeploy'
+            }
+            steps{
+                echo "Code Deployed docker image rmi start..."
+                bat 'docker image rmi simpleauth'
+            }
+            step{
+                echo "Code Deployed docker-compose up start..."
+                bat 'docker-compose up -d'
             }
         }
     }
