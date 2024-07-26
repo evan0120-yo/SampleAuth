@@ -23,9 +23,21 @@ pipeline {
                 bat 'docker-compose down'
             }
         }
+
+
+                if (fileExists('./proj')) {
+            sh 'echo found'
+        }
+
+
         stage('Docker image rmi'){
             steps{
-                bat 'docker image rmi simpleauth'
+                if(fileExists('./simpleauth')){
+                    echo "image simpleauth exist"
+                    bat 'docker image rmi simpleauth'
+                } else {
+                    echo "image simpleauth not exist"
+                }
             }
         }
         stage('Docker-compose up'){
