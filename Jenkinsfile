@@ -18,15 +18,19 @@ pipeline {
                 }
             }
         }
-        stage('Deploy'){
+        stage('Deploy1'){
             steps{
                 echo "Code Deployed docker-compose down start..."
                 bat 'docker-compose down'
             }
+        }
+        stage('Deploy2'){
             steps{
                 echo "Code Deployed docker image rmi start..."
                 bat 'docker image rmi simpleauth'
             }
+        }
+        stage('Deploy3'){
             step{
                 echo "Code Deployed docker-compose up start..."
                 bat 'docker-compose up -d'
