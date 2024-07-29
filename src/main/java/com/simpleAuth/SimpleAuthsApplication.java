@@ -24,7 +24,7 @@ public class SimpleAuthsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleAuthsApplication.class, args);
-		System.out.println("=============== START OK ===============.");
+		System.out.println("=============== START OK ===============");
 	}
 
 	@Bean
