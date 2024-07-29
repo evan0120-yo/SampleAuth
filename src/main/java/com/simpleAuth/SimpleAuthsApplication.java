@@ -16,7 +16,7 @@ import com.simpleAuth.services.AccountService;
 
 @SpringBootApplication
 public class SimpleAuthsApplication {
-	
+
 	@Autowired
 	private RoleRepository roleRepository;
 	@Autowired
@@ -24,9 +24,9 @@ public class SimpleAuthsApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(SimpleAuthsApplication.class, args);
-		System.out.println("=============== START OK ===============");
+		System.out.println("=============== START OK ===============.");
 	}
-	
+
 	@Bean
 	public String initData() {
 		Role role = Role.builder().authority("ADMIN").build();
@@ -35,13 +35,14 @@ public class SimpleAuthsApplication {
 		roleRepository.save(role);
 		Role role01 = Role.builder().authority("USER").build();
 		roleRepository.save(role01);
-		
-//		Account account = Account.builder().username("test").password("$2a$10$UMZPt0V3vDvNPveXt13z2uNCK8bcRsNVhe8kpThQzRIn27//Ih55m").roles(roles).build();
+
+		// Account account =
+		// Account.builder().username("test").password("$2a$10$UMZPt0V3vDvNPveXt13z2uNCK8bcRsNVhe8kpThQzRIn27//Ih55m").roles(roles).build();
 		Account account = Account.builder().username("test").password("{noop}12345678").roles(roles).build();
 		accountRepository.save(account);
-		
+
 		return null;
-		
+
 	}
 
 }
