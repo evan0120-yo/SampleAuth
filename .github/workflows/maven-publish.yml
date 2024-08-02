@@ -32,7 +32,7 @@ jobs:
 
       - name: cd simpleauth
         run: |
-          cd _work/SampleAuth/SampleAuth
+          cd actions-runner/_work/SampleAuth/SampleAuth
           ls -a
 
       - name: docker-compose down/up
