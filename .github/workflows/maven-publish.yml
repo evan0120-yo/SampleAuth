@@ -32,7 +32,7 @@ jobs:
 
       - name: docker-compose down/up
         run: |
-          docker-compose up
+          docker-compose up -d
 
       # - name: artifact
       #   uses: actions/upload-artifact@v4.3.4
