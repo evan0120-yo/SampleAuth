@@ -29,11 +29,15 @@ jobs:
           mvn clean package -DskipTests
           mkdir staging && cp target/*.jar staging
 
-      - name: artifact
-        uses: actions/upload-artifact@v4.3.4
-        with:
-          name: simpleauth
-          path: staging
+      - name: docker-compose up
+        run: |
+          docker-compose down
+
+      # - name: artifact
+      #   uses: actions/upload-artifact@v4.3.4
+      #   with:
+      #     name: simpleauth
+      #     path: staging
 
     # - name: Publish to GitHub Packages Apache Maven
     #   run: mvn deploy -s $GITHUB_WORKSPACE/settings.xml
