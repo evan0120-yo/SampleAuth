@@ -29,9 +29,10 @@ jobs:
           mvn clean package -DskipTests
           mkdir staging && cp target/*.jar staging
 
-      - name: docker-compose up
+      - name: docker-compose down/up
         run: |
           docker-compose down
+          docker-compose up
 
       # - name: artifact
       #   uses: actions/upload-artifact@v4.3.4
