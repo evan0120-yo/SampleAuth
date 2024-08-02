@@ -32,8 +32,7 @@ jobs:
 
       - name: docker-compose down/up
         run: |
-          ls -a
-          docker-compose down
+          # docker-compose down
           docker-compose up
 
       # - name: artifact
