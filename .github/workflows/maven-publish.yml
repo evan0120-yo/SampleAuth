@@ -29,6 +29,11 @@ jobs:
           mvn clean package -DskipTests
           mkdir staging && cp target/*.jar staging
 
+      - name: cd simpleauth
+        run: |
+          cd _work/SampleAuth/SampleAuth
+          ls -a
+
       - name: docker-compose down/up
         run: |
           docker-compose down
